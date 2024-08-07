@@ -1,8 +1,10 @@
 package rok.qa.Utilities;
 
 import java.io.File;
-
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
@@ -11,6 +13,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.ITestResult;
 import org.testng.annotations.*;
 
@@ -28,22 +31,22 @@ public class BaseClass {
 
 	// Get values from readConfig class in globally
 
-	 static Read_Configration_From_config_Prop_Folder readconfig = new Read_Configration_From_config_Prop_Folder();
+	public static Read_Configration_From_config_Prop_Folder readconfig = new Read_Configration_From_config_Prop_Folder();
 	public String url = readconfig.getBaseURL();
 	public String SFURL = readconfig.getSFURL();
 	static String browser = readconfig.getBrowsr();
 	public String username = readconfig.getusername();
 	public String password = readconfig.getpassword();
-	
+	//public static Properties prop;
+
 	public static WebDriver driver;
 	public static ExtentTest test;
 	public static ExtentReports extent = null;
 
-	//@Deprecated
+	@Deprecated
 	@BeforeClass
 	public static void setup() {
-		// Browser switching
-		
+
 		try {
 			switch (browser.toLowerCase())
 
@@ -71,7 +74,7 @@ public class BaseClass {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(14, TimeUnit.SECONDS);
 		if (driver == null) {
-		    throw new RuntimeException("WebDriver initialization failed. Check browser configuration.");
+			throw new RuntimeException("WebDriver initialization failed. Check browser configuration.");
 		}
 	}
 

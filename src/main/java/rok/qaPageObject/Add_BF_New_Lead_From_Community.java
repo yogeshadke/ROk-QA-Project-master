@@ -10,11 +10,11 @@ import org.openqa.selenium.support.ui.Select;
 import rok.qa.Utilities.Wrappers;
 
 public class Add_BF_New_Lead_From_Community {
-	WebDriver ldriver;
+	WebDriver driver;
 
-	public Add_BF_New_Lead_From_Community(WebDriver rdriver) {
-		ldriver = rdriver;
-		PageFactory.initElements(rdriver, this);
+	public Add_BF_New_Lead_From_Community(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
 	}
 
 	// 2.identify WebElement

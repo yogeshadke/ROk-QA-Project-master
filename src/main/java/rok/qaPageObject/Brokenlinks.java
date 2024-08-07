@@ -19,6 +19,7 @@ public class Brokenlinks  {
 
 	    public Brokenlinks(WebDriver driver) {
 	        this.driver = driver;
+	        PageFactory.initElements(driver, this);
 	    }
 
 	    public void checkForBrokenLinks() {

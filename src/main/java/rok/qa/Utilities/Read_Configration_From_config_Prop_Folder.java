@@ -2,6 +2,7 @@ package rok.qa.Utilities;
 
 import java.io.FileInputStream;
 
+
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
@@ -12,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class Read_Configration_From_config_Prop_Folder {
 	Properties properties;
     EventFiringWebDriver e_driver;
-	String path = "C:\\Users\\yogesh.adke\\Downloads\\ROk-QA-Project-master\\ROk-QA-Project-master\\Configrations\\Config.Properties";
+	String path = "C:\\Users\\yogesh.adke\\Downloads\\ROk-QA-Project-master-master\\ROk-QA-Project-master-master\\Configrations\\Config.Properties";
 
 	// Create constructor of a class
 	public Read_Configration_From_config_Prop_Folder() {

@@ -11,11 +11,11 @@ import Wrapper.SendKeys;
 import rok.qa.Utilities.Wrappers;
 
 public class Community_Login {
-	WebDriver ldriver;
+	WebDriver driver;
 
-	public Community_Login(WebDriver rdriver) {
-		ldriver = rdriver;
-		PageFactory.initElements(rdriver, this);
+	public Community_Login(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
 	}
 	// 2.identify WebElement
 

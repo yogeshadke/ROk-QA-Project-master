@@ -7,11 +7,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 
 public class Dash_board_Verification {
-	WebDriver ldriver;
+	WebDriver driver;
 
-	public Dash_board_Verification(WebDriver rdriver) {
-		ldriver = rdriver;
-		PageFactory.initElements(rdriver, this);
+	public Dash_board_Verification(WebDriver driver) {
+	this.driver = driver;
+		PageFactory.initElements(driver, this);
 
 	}
 

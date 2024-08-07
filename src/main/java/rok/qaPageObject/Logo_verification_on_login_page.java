@@ -1,51 +1,55 @@
 package rok.qaPageObject;
 
-import org.openqa.selenium.By;
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import Wrapper.WaitForElement;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.net.URL;
-import java.time.Duration;
+import Wrapper.WaitForElement;
+import rok.qa.Utilities.Wrappers;
 
 public class Logo_verification_on_login_page {
 
-	WebDriver ldriver;
+	WebDriver driver;
 
-	public Logo_verification_on_login_page(WebDriver rdriver) {
-		ldriver = rdriver;
-		PageFactory.initElements(rdriver, this);
+	public Logo_verification_on_login_page(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//img[@id= 'logo']")
+	@FindBy(xpath = "//img[@src='/img/logo214.svg']")
 	WebElement logoElement;
 	// a[@id="forgot_password_link"]
 
-	@FindBy(xpath = "//a[@id='forgot_password_link']")
+	@FindBy(xpath = "//a[@href='/secur/forgotpassword.jsp?locale=us']")
 	WebElement forgotpassword;
+	
+	@FindBy(xpath = "//h1[contains(text(),'Forgot Your Password')]")
+	WebElement forgotpasswordlinkvfy;
+	
+	//input[@name="cancel"]
+	@FindBy(xpath = "//input[@name='cancel']")
+	WebElement clickoncancelbtn;
 
-	public void LogoVerification() throws MalformedURLException, IOException {
-
-		if (logoElement.isDisplayed()) {
-			System.out.println("Logo Is Present.");
-		} else {
-			System.out.println("Logo verification failed.");
-		}
+	public boolean LogoVerification()  {
+	
+		return logoElement.isDisplayed();
 
 	}
 
 	public void forgotpasswordlinkverification() {
-
-		WaitForElement.visibilityOfElement(ldriver, forgotpassword, Duration.ofSeconds(5000));
-		Assert.assertEquals(forgotpassword.getText(), "Forgot Your Password?");
+       
+		WaitForElement.visibilityOfElement(driver, forgotpassword, Duration.ofSeconds(5000));
+		Wrappers.clickJS(forgotpassword);
+		String fgt = forgotpasswordlinkvfy.getText();
+		String expected ="Forgot Your Password";
+		Assert.assertEquals(fgt, expected, "Link is broken");
+		System.out.println("Redirected to forgot Password page Sucessfully"); 
+		Wrappers.clickJS(clickoncancelbtn);
+		
 
 	}
 }

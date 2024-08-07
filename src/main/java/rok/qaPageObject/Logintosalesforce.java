@@ -21,11 +21,11 @@ import Wrapper.WaitForElement;
 
 public class Logintosalesforce {
 	private static final String SHEET_NAME = "LoginSF1";
-	WebDriver ldriver;
+	WebDriver driver;
 
-	public Logintosalesforce(WebDriver rdriver) {
-		ldriver = rdriver;
-		PageFactory.initElements(rdriver, this);
+	public Logintosalesforce(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
 
 	}
 
@@ -44,7 +44,7 @@ public class Logintosalesforce {
 		String username = excelUtils.getSheet((String) SHEET_NAME).getRow(10).getCell(1).getStringCellValue();
 		String password = excelUtils.getSheet((String) SHEET_NAME).getRow(10).getCell(2).getStringCellValue();
         
-		ldriver.get(sfurl);
+		driver.get(sfurl);
 		
 		SendKeys.sendKeysToElement(sfemail, username);
 		String actualuser = sfemail.getAttribute("value");

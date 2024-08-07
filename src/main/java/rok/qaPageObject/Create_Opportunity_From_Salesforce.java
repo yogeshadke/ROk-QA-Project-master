@@ -23,11 +23,11 @@ import rok.qa.Utilities.Wrappers;
 
 public class Create_Opportunity_From_Salesforce {
 
-	public WebDriver ldriver;
+	public WebDriver driver;
 
-	public Create_Opportunity_From_Salesforce(WebDriver rdriver) {
-		ldriver = rdriver;
-		PageFactory.initElements(rdriver, this);
+	public Create_Opportunity_From_Salesforce(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
 	}
 
 	@FindBy(xpath = "//input[@type='email']")
@@ -122,12 +122,12 @@ public class Create_Opportunity_From_Salesforce {
 
 	public void SFlogin() throws InterruptedException {
 
-		ldriver.get("https://rok--rokcommqa.sandbox.lightning.force.com/");
-		WaitForElement.visibilityOfElement(ldriver, sfemail, Duration.ofSeconds(500));
+		driver.get("https://rok--rokcommqa.sandbox.lightning.force.com/");
+		WaitForElement.visibilityOfElement(driver, sfemail, Duration.ofSeconds(500));
 		sfemail.sendKeys("testaress12july@yopmail.com");
-		WaitForElement.visibilityOfElement(ldriver, sfpassword, Duration.ofSeconds(500));
+		WaitForElement.visibilityOfElement(driver, sfpassword, Duration.ofSeconds(500));
 		sfpassword.sendKeys("Aress@123");
-		WaitForElement.elementToBeClickable(ldriver, sfsubit, Duration.ofSeconds(500));
+		WaitForElement.elementToBeClickable(driver, sfsubit, Duration.ofSeconds(500));
 		sfsubit.click();
 	}
 
@@ -146,9 +146,9 @@ public class Create_Opportunity_From_Salesforce {
 		Wrappers.clickJS(selectdate);
 		Wrappers.clickJS(clickonsave);
 		Wrappers.clickJS(Editsource);
-		WaitForElement.elementToBeClickable(ldriver, clickonsource, Duration.ofSeconds(500));
+		WaitForElement.elementToBeClickable(driver, clickonsource, Duration.ofSeconds(500));
 		clickonsource.click();
-		WaitForElement.elementToBeClickable(ldriver, selectsource, Duration.ofSeconds(500));
+		WaitForElement.elementToBeClickable(driver, selectsource, Duration.ofSeconds(500));
 		selectsource.click();
 		Wrappers.clickJS(checkboxcheck);
 		Wrappers.clickJS(clickonsaveedit);

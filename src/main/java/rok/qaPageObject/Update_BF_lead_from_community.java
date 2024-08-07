@@ -19,13 +19,13 @@ import rok.qa.Utilities.FileUploadUsingRobot;
 import rok.qa.Utilities.Wrappers;
 
 public class Update_BF_lead_from_community {
-	WebDriver ldriver;
+	WebDriver driver;
 	String filePath1 = "D:\\pdf test3.pdf";
 
-	public Update_BF_lead_from_community(WebDriver rdriver) {
-		ldriver = rdriver;
+	public Update_BF_lead_from_community(WebDriver driver) {
+		this.driver = driver;
 
-		PageFactory.initElements(rdriver, this);
+		PageFactory.initElements(driver, this);
 	}
 
 	// 2.identify WebElement

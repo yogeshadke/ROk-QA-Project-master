@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="rok.qa.Testcases.Verify_created_lead_from_salesforce_end_11">
+      <class name="rok.qa.Testcases.Verify_add_business_Financing_lead_From_Landing_Page_09">
         <methods>
           <include name="tearDown"/>
           <include name="afterEachMethod"/>
-          <include name="Create_lead_from_Salesforce_end"/>
-          <include name="setUp"/>
+          <include name="Add_business_financing_lead_From_landing_page"/>
           <include name="setup"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- rok.qa.Testcases.Verify_created_lead_from_salesforce_end_11 -->
+      </class> <!-- rok.qa.Testcases.Verify_add_business_Financing_lead_From_Landing_Page_09 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

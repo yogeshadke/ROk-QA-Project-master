@@ -11,11 +11,11 @@ import rok.qa.Utilities.FileUploadUsingRobot;
 import rok.qa.Utilities.Wrappers;
 
 public class Update_RP_lead_from_community {
-	WebDriver ldriver;
+	WebDriver driver;
 
-	public Update_RP_lead_from_community(WebDriver rdriver) {
-		ldriver = rdriver;
-		PageFactory.initElements(rdriver, this);
+	public Update_RP_lead_from_community(WebDriver driver) {
+		driver = driver;
+		PageFactory.initElements(driver, this);
 	}
 
 	// 2.identify WebElement

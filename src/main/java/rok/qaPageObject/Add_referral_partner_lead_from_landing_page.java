@@ -9,11 +9,11 @@ import rok.qa.Utilities.Wrappers;
 
 public class Add_referral_partner_lead_from_landing_page {
 	
-	WebDriver ldriver;
+	WebDriver driver;
 
-	public Add_referral_partner_lead_from_landing_page(WebDriver rdriver) {
-		ldriver = rdriver;
-		PageFactory.initElements(rdriver, this);
+	public Add_referral_partner_lead_from_landing_page(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
 	}
 
 	// 2.identify WebElement

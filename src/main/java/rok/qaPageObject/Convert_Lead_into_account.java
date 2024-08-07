@@ -11,12 +11,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import rok.qa.Utilities.Wrappers;
 
 public class Convert_Lead_into_account {
-	public WebDriver ldriver;
+	public WebDriver driver;
 	WebDriverWait wait;
 
-	public Convert_Lead_into_account(WebDriver rdriver) {
-		ldriver = rdriver;
-		PageFactory.initElements(rdriver, this);
+	public Convert_Lead_into_account(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
 	}
 
 	// 2.identify WebElement
@@ -108,8 +108,8 @@ public class Convert_Lead_into_account {
 		Wrappers.clickJS(Rpmanagelead);
 		String savetext = gettext1.getText();
 		System.out.println(savetext);
-		ldriver.switchTo().newWindow(WindowType.TAB);
-		ldriver.get("https://rok--rokcommqa.sandbox.lightning.force.com/");
+		driver.switchTo().newWindow(WindowType.TAB);
+		driver.get("https://rok--rokcommqa.sandbox.lightning.force.com/");
 		sfemail.sendKeys("testaress12july@yopmail.com");
 		sfpassword.sendKeys("Aress@123");
 		sfsubit.click();

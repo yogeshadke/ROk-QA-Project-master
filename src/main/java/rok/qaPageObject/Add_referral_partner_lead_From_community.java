@@ -10,11 +10,11 @@ import rok.qa.Utilities.Wrappers;
 
 public class Add_referral_partner_lead_From_community {
 
-	WebDriver ldriver;
+	WebDriver driver;
 
-	public Add_referral_partner_lead_From_community(WebDriver rdriver) {
-		ldriver = rdriver;
-		PageFactory.initElements(rdriver, this);
+	public Add_referral_partner_lead_From_community(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
 	}
 
 	// 2.identify WebElement

@@ -12,11 +12,11 @@ import Wrapper.ClickButton;
 
 public class Create_lead_from_salesforce_end {
 	private static final String SHEET_NAME = "LoginSF1";
-	public WebDriver ldriver;
+	public WebDriver driver;
 	
-	public Create_lead_from_salesforce_end(WebDriver rdriver) {
-		ldriver = rdriver;
-		PageFactory.initElements(rdriver, this);
+	public Create_lead_from_salesforce_end(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
 		
 	}
 

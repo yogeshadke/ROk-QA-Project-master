@@ -23,11 +23,11 @@ import io.reactivex.rxjava3.functions.Action;
 import rok.qa.Utilities.Wrappers;
 
 public class Convert_Community_Lead_into_opportunity {
-	public WebDriver ldriver;
+	public WebDriver driver;
 	WebDriverWait wait;
-	public Convert_Community_Lead_into_opportunity(WebDriver rdriver) {
-		ldriver = rdriver;
-		PageFactory.initElements(rdriver, this);
+	public Convert_Community_Lead_into_opportunity(WebDriver driver) {
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
 	}
 
 	// 2.identify WebElement
@@ -91,8 +91,8 @@ public class Convert_Community_Lead_into_opportunity {
 		Wrappers.clickJS(clickManageleads);
 		String savetext =gettext1.getText();
 		System.out.println(savetext);
-		ldriver.switchTo().newWindow(WindowType.TAB);
-		ldriver.get("https://rok--rokcommqa.sandbox.lightning.force.com/");
+		driver.switchTo().newWindow(WindowType.TAB);
+		driver.get("https://rok--rokcommqa.sandbox.lightning.force.com/");
 		sfemail.sendKeys("testaress12july@yopmail.com");
 		sfpassword.sendKeys("Aress@123");
 		sfsubit.click();
@@ -115,6 +115,8 @@ public class Convert_Community_Lead_into_opportunity {
      Wrappers.clickJS(convertconfirm);
      Thread.sleep(6000);
      Wrappers.clickJS(convertconfirm);
+     Actions act = new Actions(driver);
+     act.scrollToElement(changeowner).click(convert).build().perform();
      
      
     	  //oppssearch.sendKeys(savetext);

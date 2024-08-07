@@ -6,6 +6,7 @@ import java.util.Set;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -16,11 +17,12 @@ import rok.qa.Utilities.Wrappers;
 
 public class Add_business_Financing_lead_From_Landing_Page {
 
-	WebDriver ldriver;
+	public static WebDriver driver;
 
-	public Add_business_Financing_lead_From_Landing_Page(WebDriver rdriver) {
-		ldriver = rdriver;
-		PageFactory.initElements(rdriver, this);
+	public Add_business_Financing_lead_From_Landing_Page(WebDriver driver) {
+	
+		this.driver= driver;
+		PageFactory.initElements(driver, this);
 	}
 
 	// 2.identify WebElement
@@ -71,7 +73,9 @@ public class Add_business_Financing_lead_From_Landing_Page {
 		// Wrappers.clickJS(cliclonhome);
 		Thread.sleep(5000);
 		Wrappers.executeScript("window.scrollTo(0, document.body.scrollHeight / 2)");
-		Wrappers.clickJS(cliclBFurl);
+		Actions act= new Actions(driver);
+		act.scrollToElement(cliclBFurl);
+		//Wrappers.clickJS(cliclBFurl);
 		Wrappers.windowhand();
 		Thread.sleep(5000);
 		plaidusername.sendKeys("aress_dev");
